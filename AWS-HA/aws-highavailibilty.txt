@@ -1,0 +1,27 @@
+- aws ec2 describe-instances
+
+- aws ec2 run-instances --image-id ami-04b1ddd35fd71475a --count 1 --instance-type t2.micro --key-name awsxxx --security-group-ids sg-xxxxxxxxx --subnet-id subnet-8xxxxx
+
+- ssh -i "keyname.pem" ec2-user@ec2-13-2xx-13-39.ap-south-1.compute.amazonaws.com
+
+- aws ec2 create-volume --volume-type gp2 --size 10 --availability-zone ap-south-1b
+
+- aws ec2 create-tags --resources vol-02f491dbxxx3a7cc --tags Key=Name,Value=PenDrive
+
+- aws ec2 attach-volume --volume-id vol-02f49xxxxx --instance-id i-0d9ab12xxxx271 --device /dev/sdf
+
+- fdisk /dev/xvdf
+
+- mkfs.ext4 /dev/xvdf1
+
+- mount /dev/xvdf1 /var/www/html
+
+- aws s3api create-bucket --bucket my-buck3t --create-bucket-configuration LocationConstraint=ap-south-1 --acl public-read
+
+- aws s3 cp 11.jpg s3://my-buck3t/11.jpg --acl public-read
+
+- aws cloudfront create-distribution --origin-domain-name my-buck3t.s3.amazonaws.com --default-root-object 11.jpg
+
+
+
+- 
